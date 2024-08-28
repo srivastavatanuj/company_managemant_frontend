@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import img from'../../assets/Kurmatologo.png';
 
 const Header = () => {
@@ -11,12 +12,14 @@ const Header = () => {
         <div className="text-black text-lg flex justify-center">
         <a href="#" className="px-3 py-2 font-bold ">Home</a>
           <a href="#" className="px-3 py-2 rounded font-bold ">Employee</a>
-          <a href="#" className="px-3 py-2 font-bold">Project</a>
+          <a href="/project" className="px-3 py-2 font-bold">Project</a>
         </div>
         <div>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+<Link to ="/contactus">
+          <button  className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" >
             Contact Us
           </button>
+          </Link>
         </div>
       </div>
     </nav>
