@@ -1,13 +1,11 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Header from '../header/Header';
 
 const ProjectDetails = () => {
   const { id } = useParams();
 
   return (
-    <>
-    <Header/>
+
     <div>
     <div className="bg-white p-6 rounded-lg shadow-lg max-w-md mx-auto mt-10">
       <h1 className="text-3xl font-bold text-center text-purple-700 mb-4">Devine</h1>
@@ -27,7 +25,6 @@ const ProjectDetails = () => {
 
     </div>
 
-    </>
   );
 };
 
