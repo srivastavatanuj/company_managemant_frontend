@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import img from '../../assets/Kurmatologo.png';
+import img from '../../assets/images/Kurmatologo.png';
 
 const Header = () => {
   return (
