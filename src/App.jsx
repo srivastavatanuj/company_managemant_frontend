@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
-import ContactUs from "./pages/ContactUs";
+import ContactUs from "./pages/ContactUs/contact.jsx";
 import EmployeeList from "./pages/Employee/EmployeeList";
 import EmployeeDetail from "./pages/Employee/EmployeeDetail";
 import LoginForm from "./pages/Login/LoginForm";

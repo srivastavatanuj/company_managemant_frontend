@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import Header from '../../components/header/Header';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    subject:'',
+    message: '',
+
   });
 
   const handleChange = (e) => {
@@ -20,7 +21,6 @@ const Contact = () => {
 
   return (
     <>
-<Header/>
 
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
@@ -48,6 +48,18 @@ const Contact = () => {
               onChange={handleChange}
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               placeholder="you@example.com"
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="text" className="block text-sm font-medium text-gray-700">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              placeholder="your subject"
             />
           </div>
           <div className="mb-4">
