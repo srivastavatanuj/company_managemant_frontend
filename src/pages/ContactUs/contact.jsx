@@ -14,7 +14,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission (e.g., send data to a backend)
+
     console.log('Form data:', formData);
   };
 
@@ -24,7 +24,7 @@ const Contact = () => {
 
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h1 className="text-2xl font-bold mb-6 text-gray-900">Contact Us</h1>
+        <h1 className="text-3xl font-bold mb-6 text-gray-900">Contact Us</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>

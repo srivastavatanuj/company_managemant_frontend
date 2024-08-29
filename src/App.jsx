@@ -1,21 +1,24 @@
 import Header from "./components/header/Header.jsx";
+import ProjectDetails from "./components/Project_details/ProjectDetails.jsx";
 import Contact from "./pages/ContactUs/contact.jsx";
-import Project from"./pages/project/Project.jsx";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Project from "./pages/project/Project.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Data from "./assets/data.js";
 
 function App() {
 
-  const projects = ['Divine',"Home Maintenance", 'Krazy11', 'CryptoFiatX', "Beri'sMagic", 'Vinayaka'];
   return (
     <BrowserRouter>
-    <Routes>
+      <Routes>
+        <Route path="/" element={<Header />}></Route>
+        <Route
+          path="/project" element={<Project projects={Data} />}
+        ></Route>
+        <Route path="/contactus" element={<Contact />}></Route>
+      <Route path="/project/:id" element={<ProjectDetails/>}></Route>
 
-      <Route path="/" element={<Header/>}></Route>
-<Route path="/project"element={<Project projects={projects}/>}></Route>
-<Route path="/contactus" element={<Contact/>}></Route>
-
-    </Routes>
-  </BrowserRouter>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
