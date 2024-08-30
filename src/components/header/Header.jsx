@@ -4,7 +4,7 @@ import img from '../../assets/images/Kurmatologo.png';
 const Header = () => {
   return (
     <header>
-      <nav className=" p-4">
+      <nav className="p-4">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
           {/* Logo */}
           <img className='h-10 mb-4 md:mb-0 md:w-1/9' src={img} alt="Kurmato Logo" />
@@ -19,7 +19,7 @@ const Header = () => {
 
           {/* Contact Button */}
           <div>
-            <Link to="/contactus">
+            <Link to="/contact">
               <button className="bg-blue-950 text-white px-4 py-2 rounded hover:bg-blue-600">
                 Contact Us
               </button>
