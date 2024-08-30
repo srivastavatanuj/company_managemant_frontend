@@ -24,6 +24,7 @@ const Contact = () => {
 
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+
         <h1 className="text-3xl font-bold mb-6 text-gray-900">Contact Us</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -83,8 +84,6 @@ const Contact = () => {
         </form>
       </div>
     </div>
-    </>
-
   );
 };
 
