@@ -4,7 +4,7 @@ const Data = [
   {
     // id:"1",
     name: "Divine",
-    image: "https://media.istockphoto.com/id/1313456479/photo/man-and-soul-yoga-lotus-pose-meditation-on-nebula-galaxy-background.jpg?s=612x612&w=0&k=20&c=jJ0pVed-sHjDBtomrO7KmR4qtIfH8OaNhjmEsXvJmAI=",
+    // image: "https://media.istockphoto.com/id/1313456479/photo/man-and-soul-yoga-lotus-pose-meditation-on-nebula-galaxy-background.jpg?s=612x612&w=0&k=20&c=jJ0pVed-sHjDBtomrO7KmR4qtIfH8OaNhjmEsXvJmAI=",
     // image: "company_managemant_frontend/src/assets/images/Divine.jpg",
     description: "Divine is a project focused on spiritual wellness and community building.",
     employees: 20,
