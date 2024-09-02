@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import Header from '../../components/header/Header';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    subject:'',
+    message: '',
+
   });
+
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,9 +21,11 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen  flex items-center justify-center
-    ">
-      <div className="bg-[#e0e0e0] shadow-[14px_14px_22px_#777777,-14px_-14px_22px_#ffffff p-8 rounded-lg shadow-lg w-full max-w-md">
+    <>
+
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+
         <h1 className="text-3xl font-bold mb-6 text-gray-900">Contact Us</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
@@ -49,6 +53,18 @@ const Contact = () => {
             />
           </div>
           <div className="mb-4">
+            <label htmlFor="text" className="block text-sm font-medium text-gray-700">Subject</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+              className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              placeholder="your subject"
+            />
+          </div>
+          <div className="mb-4">
             <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
             <textarea
               id="message"
@@ -69,6 +85,7 @@ const Contact = () => {
         </form>
       </div>
     </div>
+    </>
   );
 };
 
