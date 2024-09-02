@@ -5,8 +5,8 @@ import EmployeeDetail from "./pages/Employee/EmployeeDetail";
 import LoginForm from "./pages/Login/LoginForm";
 import Project from "./pages/project/Project.jsx";
 import ProjectDetails from "./pages/project/ProjectDetails.jsx";
-import Data from "./assets/data.js";
 import Contact from "./pages/ContactUs/contact.jsx";
+import AddProject from "./pages/project/AddProject.jsx";
 
 
 function App() {
@@ -14,12 +14,13 @@ function App() {
     <>
       <Routes>
         <Route path="/login" element={<LoginForm />} />
-        <Route path="/project" element={<Project projects={Data} />}></Route>
+        <Route path="/project" element={<Project/>}/>
         <Route path="/project/:id" element={<ProjectDetails />}></Route>
         <Route path="/home" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/employee" element={<EmployeeList />} />
         <Route path="/employee/:id" element={<EmployeeDetail />} />
+        <Route path="/add-project" element={<AddProject />} />
       </Routes>
     </>
 
