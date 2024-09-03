@@ -1,14 +1,14 @@
 
 import React from 'react';
-import { Calendar } from 'lucide-react';
+
 
  function AddProject() {
   return (
-    <div className="bg-gray-100 p-6 max-w-2xl mx-auto">
+    <div className="bg-gray-100 p-6 max-w-2xl mx-auto mt-5 mb-5">
       <h1 className="text-2xl font-semibold mb-6">Add projects</h1>
       <form className="space-y-4">
         <div>
-          <label htmlFor="project-name" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="project-name" className="block text-sm font-medium text-gray-700 mb-5">
             Project name:
           </label>
           <input
@@ -62,10 +62,10 @@ import { Calendar } from 'lucide-react';
               className="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
             <button type="button" className="ml-2 text-gray-500 hover:text-gray-700">
-              <Calendar size={20} />
+
             </button>
           </div>
-          <p className="text-xs text-gray-500 mt-1">Note: You are 5.5 hours ahead of server time.</p>
+
         </div>
 
         <div>
@@ -79,10 +79,10 @@ import { Calendar } from 'lucide-react';
               className="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
             />
             <button type="button" className="ml-2 text-gray-500 hover:text-gray-700">
-              <Calendar size={20} />
+
             </button>
           </div>
-          <p className="text-xs text-gray-500 mt-1">Note: You are 5.5 hours ahead of server time.</p>
+
         </div>
 
         <div>
