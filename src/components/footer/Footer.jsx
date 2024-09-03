@@ -12,12 +12,14 @@ const Footer = () => {
 
                     <img className="h-10 mb-4 md:mb-0" src={img} alt="KurmatoLogo" />
                     <div className=" text-slate-900 flex text-2xl gap-4 mb-4 md:mb-0">
-                        <FaInstagramSquare />
+                      {/* <link to={https://www.instagram.com/kurmato_official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==}>
+                      <FaInstagramSquare />
+                      </link> */}
                         <FaFacebook />
                         <FaTwitter />
                         <FaLinkedin />
                     </div>
-                    <div><button className="bg-red-50 p-2">AboutUs</button></div>
+                    <div><button className="bg-slate-900 text-white rounded w-20 p-2">AboutUs</button></div>
                 </div>
                 {/* Address */}
                 <div className="text-slate-900 text-center md:text-left mt-4 md:mt-6">

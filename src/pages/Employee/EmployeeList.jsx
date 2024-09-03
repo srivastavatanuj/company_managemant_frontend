@@ -41,7 +41,7 @@ const EmployeeList = () => {
                         <div className="bg-[#e7e0e0] p-4 sm:p-6 rounded-lg w-full h-full">
                             <div className="flex flex-col items-center text-center">
                                 <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center">
-                                    <img src="" alt='img' className="h-full w-full object-cover border-4rounded-full" />
+                                    <img src={employee.Profile_image} alt='img' className="h-full w-full object-cover border-4  rounded-full" />
                                 </div>
                                 <h2 className="text-lg sm:text-xl font-bold text-black mt-4">{employee.Employee_name}</h2>
                                 <p className="text-sm sm:text-base text-gray-600">{employee.Designation}</p>
