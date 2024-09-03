@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import EmployeeList from "./pages/Employee/EmployeeList";
 import EmployeeDetail from "./pages/Employee/EmployeeDetail";
@@ -14,15 +14,14 @@ function App() {
     <>
       <Routes>
         <Route path="/login" element={<LoginForm />} />
-        <Route path="/project" element={<Project projects={Data} />}></Route>
-        <Route path="/project/:id" element={<ProjectDetails />}></Route>
+        <Route path="/project" element={<Project projects={Data} />} />
+        <Route path="/project/:id" element={<ProjectDetails />} />
         <Route path="/home" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/employee" element={<EmployeeList />} />
         <Route path="/employee/:id" element={<EmployeeDetail />} />
       </Routes>
     </>
-
   );
 }
 

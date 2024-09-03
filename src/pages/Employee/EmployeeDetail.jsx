@@ -1,58 +1,57 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import employeeImage from '../../assets/employee1.png'; // Add the image import
-import employeeData from './EmployeeData';
 
 const EmployeeDetail = () => {
     const { id } = useParams();
-    const employee = employeeData.find(emp => emp.Employee_id === parseInt(id));
+    const [employee, setEmployee] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchEmployee = async () => {
+            try {
+                const response = await fetch(`https://kashishpal123.pythonanywhere.com/employees/retrieve-employee/${id}`);
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch employee data, status code: ${response.status}`);
+                }
+                const data = await response.json();
+                setEmployee(data);
+                setLoading(false);
+            } catch (err) {
+                setError(err.message);
+                setLoading(false);
+            }
+        };
+
+        fetchEmployee();
+    }, [id]);
+
+    if (loading) {
+        return <p className="text-center mt-4">Loading...</p>;
+    }
+
+    if (error) {
+        return <p className="text-center mt-4 text-red-500">Error: {error}</p>;
+    }
 
     if (!employee) {
-        return <p className="text-center text-red-500">Employee not found</p>;
+        return <p className="text-center mt-4">Employee not found or does not exist</p>;
     }
 
     return (
-        <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="bg-gradient-to-r from-orange-400 to-yellow-500 p-6">
-                <div className="flex items-center">
-                    <img
-                        src={employeeImage}
-                        alt="Profile"
-                        className="w-20 h-20 rounded-full border-4 border-white"
-                    />
-                    <div className="ml-4">
-                        <h1 className="text-xl font-bold text-white">{employee.Employee_name}</h1>
-                        <p className="text-white">{employee.Email}</p>
-                    </div>
-                </div>
-            </div>
+        <div className='w-2/4 h-80 my-16 mx-auto shadow-md ' >
+            <h1 className="text-xl font-bold text-center bg-gray-200 text-slate-900">Employee Details</h1>
 
-            <div className="p-6">
-                <div className="grid grid-cols-3 gap-4">
-                    <div>
-                        <h2 className="text-sm font-semibold text-gray-500">Manager</h2>
-                        <p className="text-gray-700">{employee.Manager || 'N/A'}</p>
-                    </div>
-                    <div>
-                        <h2 className="text-sm font-semibold text-gray-500">Office Location</h2>
-                        <p className="text-gray-700">{employee.OfficeLocation || 'N/A'}</p>
-                    </div>
-                    <div>
-                        <h2 className="text-sm font-semibold text-gray-500">Joining Date</h2>
-                        <p className="text-gray-700">{employee.Joining_date}</p>
-                    </div>
+            <div className=" flex  justify-between">
+                <div className='my-auto'>
+                    <img className='h-32 object-cover w-32 mt-10 rounded-full border-2 ml-10' src={employee.Profile_image} alt="img" />
                 </div>
-            </div>
-
-            <div className="p-6">
-                <div className="mb-4">
-                    <h2 className="text-lg font-semibold text-gray-800">Contact Details</h2>
-                    <p className="text-gray-600">Email: {employee.Email}</p>
-                    <p className="text-gray-600">Mobile: {employee.Mobile || '(+91) 7389678656'}</p> {/* Adjusted the default mobile number */}
-                </div>
-                <div className="mb-4">
-                    <h2 className="text-lg font-semibold text-gray-800">Skills</h2>
-                    <p className="text-gray-600">{employee.Skills}</p>
+                <div className="space-y-4  text-gray-700 mt-12">
+                    <p><strong>Name:</strong> {employee.Employee_name}</p>
+                    <p><strong >Designation:</strong> {employee.Designation}</p>
+                    <p><strong >Skills:</strong> {employee.Skills}</p>
+                    <p><strong>Date of Joining:</strong> {employee.Joining_date}</p>
+                    <p><strong >Email:</strong> {employee.email}</p>
                 </div>
             </div>
         </div>
