@@ -5,17 +5,21 @@ import { FaInstagramSquare, FaFacebook, FaTwitter, FaLinkedin } from "react-icon
 const Footer = () => {
     return (
         <div className="bg-[#e7e0e0] py-6   w-full">
-            {/* bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 */}
+
             <footer className="container mx-auto px-4">
                 {/* Kurmato Logo and Icons */}
                 <div className="flex flex-col md:flex-row justify-between items-center">
+
                     <img className="h-10 mb-4 md:mb-0" src={img} alt="KurmatoLogo" />
                     <div className=" text-slate-900 flex text-2xl gap-4 mb-4 md:mb-0">
-                    <FaInstagramSquare />
-                    <FaFacebook />
-                    <FaTwitter />
-                    <FaLinkedin /> 
+                      {/* <link to={https://www.instagram.com/kurmato_official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==}>
+                      <FaInstagramSquare />
+                      </link> */}
+                        <FaFacebook />
+                        <FaTwitter />
+                        <FaLinkedin />
                     </div>
+                    <div><button className="bg-slate-900 text-white rounded w-20 p-2">AboutUs</button></div>
                 </div>
                 {/* Address */}
                 <div className="text-slate-900 text-center md:text-left mt-4 md:mt-6">
