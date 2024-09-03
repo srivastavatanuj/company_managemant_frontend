@@ -16,7 +16,7 @@ const LoginForm = () => {
                     </p>
                 </div>
             </div>
-
+            
             {/* Right Section */}
             <div className="flex items-center justify-center p-8">
                 <div className="w-full max-w-md">
@@ -43,11 +43,8 @@ const LoginForm = () => {
                             <label className="block text-sm font-medium text-gray-700">Phone Number</label>
                             <input type="text" defaultValue="+91" className="mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
                         </div>
-                        <div className="flex items-center">
-                            <input type="checkbox" id="terms" className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded" />
-                            <label htmlFor="terms" className="ml-2 block text-sm text-gray-900"> I agree to the <a href="#" className="text-indigo-600 hover:underline">terms of service</a> and <a href="#" className="text-indigo-600 hover:underline">Privacy Policy</a></label>
-                        </div>
-                        <button type="submit" className="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700">SIGN UP</button>
+                        
+                        <button type="submit" className="w-full bg-indigo-600 text-white py-2 rounded-md hover:bg-indigo-700">LogIn</button>
                     </form>
                 </div>
             </div>

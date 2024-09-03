@@ -4,7 +4,7 @@ import middleimage1 from '../../assets/middleimage1.png';
 import middleimage2 from '../../assets/middleimage2.png';
 const DatabaseComp = () => {
   return (
-    <div className='my-6'>
+    <div className='mx-16 mt-14'>
       
       <div className="text-lg sm:text-3xl text-center font-semibold py-4 sm:py-6">
           <h1>Secure Employee Database Management</h1>

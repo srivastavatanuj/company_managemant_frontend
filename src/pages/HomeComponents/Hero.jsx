@@ -4,7 +4,7 @@ import homepageimage from '../../assets/homepageimage.png';
 
 const Hero = () => {
   return (
-    <div className=' bg-[#103556] mx-5' >
+    <div className=' bg-[#103556] ' >
 
       <div className="w-full flex flex-col md:flex-row md:justify-between items-center  md:p-6 space-y-4 md:space-y-0">
         <div className="text-[#FFFFFF] flex flex-col justify-between md:w-1/2 text-center md:text-left">

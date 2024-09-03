@@ -27,9 +27,9 @@ const Header = () => {
             <Link to="/contact" className="bg-blue-950 text-white px-4 py-2 rounded hover:bg-blue-800">
               Contact Us
             </Link>
-            <Link to="/login" className="bg-blue-950 text-white px-4 py-2 rounded hover:bg-blue-800">
+            {/* <Link to="/login" className="bg-blue-950 text-white px-4 py-2 rounded hover:bg-blue-800">
               Log In
-            </Link>
+            </Link> */}
           </div>
 
           {/* Three line menu for mobile */}
@@ -52,9 +52,9 @@ const Header = () => {
             <Link to="/contact" className="block py-2 mt-4 bg-blue-950 text-white px-4 rounded hover:bg-blue-800">
               Contact Us
             </Link>
-            <Link to="/login" className="block py-2 mt-2 bg-blue-950 text-white px-4 rounded hover:bg-blue-800">
+            {/* <Link to="/login" className="block py-2 mt-2 bg-blue-950 text-white px-4 rounded hover:bg-blue-800">
               Log In
-            </Link>
+            </Link> */}
           </div>
         )}
       </nav>

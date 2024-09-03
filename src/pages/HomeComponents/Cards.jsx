@@ -6,7 +6,7 @@ import cardimage4 from '../../assets/cardimage4.png';
 
 const Cards = () => {
   return (
-    <div className='mx-5'> 
+    <div className='mx-20 mt-14'> 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 my-8">
           {[cardimage1, cardimage2, cardimage3, cardimage4].map((image, index) => (
             <div key={index} className="border border-gray-300 rounded-lg shadow-lg p-4 flex flex-col items-center">

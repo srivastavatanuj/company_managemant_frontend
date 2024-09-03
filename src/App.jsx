@@ -7,7 +7,7 @@ import Project from "./pages/project/Project.jsx";
 import ProjectDetails from "./pages/project/ProjectDetails.jsx";
 import Data from "./assets/data.js";
 import Contact from "./pages/ContactUs/contact.jsx";
-// import AboutUs from "./pages/aboutUs/AboutUs.jsx";
+
 
 function App() {
   return (
@@ -20,7 +20,6 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/employee" element={<EmployeeList />} />
         <Route path="/employee/:id" element={<EmployeeDetail />} />
-        {/* <Route path="/aboutus" element={<AboutUs />} /> */}
       </Routes>
     </>
   );
