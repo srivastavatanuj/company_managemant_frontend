@@ -18,7 +18,7 @@ const Header = () => {
 
 
           <div className="hidden md:flex items-center space-x-4 flex-grow justify-center gap-8 text-2xl ">
-            <Link to="/home" className="text-gray-700 hover:text-gray-900">Home</Link>
+            <Link to="/" className="text-gray-700 hover:text-gray-900">Home</Link>
             <Link to="/employee" className="text-gray-700 hover:text-gray-900">Employee</Link>
             <Link to="/project" className="text-gray-700 hover:text-gray-900">Project</Link>
           </div>
