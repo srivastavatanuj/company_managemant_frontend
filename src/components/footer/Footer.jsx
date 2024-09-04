@@ -1,25 +1,34 @@
 import React from "react";
 import img from '../../assets/KurmatoLogo.png';
 import { FaInstagramSquare, FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className="bg-[#e7e0e0] py-6   w-full">
-
+        <div className="bg-[#e7e0e0] py-6 w-full">
             <footer className="container mx-auto px-4">
                 {/* Kurmato Logo and Icons */}
                 <div className="flex flex-col md:flex-row justify-between items-center">
-
-                    <img className="h-10 mb-4 md:mb-0" src={img} alt="KurmatoLogo" />
-                    <div className=" text-slate-900 flex text-2xl gap-4 mb-4 md:mb-0">
-                      {/* <link to={https://www.instagram.com/kurmato_official?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==}>
-                      <FaInstagramSquare />
-                      </link> */}
-                        <FaFacebook />
-                        <FaTwitter />
-                        <FaLinkedin />
+                    <img className="h-10 mb-4 md:mb-0" src={img} alt="Kurmato Logo" />
+                    <div className="text-slate-900 flex text-2xl gap-4 mb-4 md:mb-0">
+                        <a href="https://www.instagram.com/kurmato_official" target="_blank" rel="noopener noreferrer">
+                            <FaInstagramSquare />
+                        </a>
+                        <a href="https://www.facebook.com/kurmato_official" target="_blank" rel="noopener noreferrer">
+                            <FaFacebook />
+                        </a>
+                        <a href="https://twitter.com/kurmato_official" target="_blank" rel="noopener noreferrer">
+                            <FaTwitter />
+                        </a>
+                        <a href="https://www.linkedin.com/company/kurmato_official" target="_blank" rel="noopener noreferrer">
+                            <FaLinkedin />
+                        </a>
                     </div>
-                    <div><button className="bg-slate-900 text-white rounded w-20 p-2">AboutUs</button></div>
+                    <div>
+                        <Link to="/aboutus" className="block py-2 mt-4 bg-blue-950 text-white px-4 rounded hover:bg-blue-800">
+                            About Us
+                        </Link>
+                    </div>
                 </div>
                 {/* Address */}
                 <div className="text-slate-900 text-center md:text-left mt-4 md:mt-6">

@@ -49,7 +49,7 @@ const EmployeeDetail = () => {
                 <div className="space-y-4  text-gray-700 mt-12">
                     <p><strong>Name:</strong> {employee.Employee_name}</p>
                     <p><strong >Designation:</strong> {employee.Designation}</p>
-                    <p><strong >Skills:</strong> {employee.Skills}</p>
+                    <p className=' text-wrap w-96'><strong >Skills:</strong> {employee.Skills}</p>
                     <p><strong>Date of Joining:</strong> {employee.Joining_date}</p>
                     <p><strong >Email:</strong> {employee.email}</p>
                 </div>

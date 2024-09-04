@@ -36,11 +36,13 @@ const EmployeeList = () => {
 
     return (
         <div className="p-4 sm:p-6 min-h-screen">
-            <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-center text-purple-600">Employee List</h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+
+            <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-center">Employee List</h1>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
                 {employees.map((employee) => (
                     <Link to={`/employee/${employee.Employee_id}`} key={employee.Employee_id} className="block">
-                        <div className="bg-[#e7e0e0] p-4 sm:p-6 rounded-lg w-full h-full">
+                        <div className="bg-gradient-to-b to-[#858282] from-[#EBE5E5]  p-4 sm:p-6 w-full h-64">
                             <div className="flex flex-col items-center text-center">
                                 <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full flex items-center justify-center">
                                     <img src={employee.Profile_image} alt='img' className="h-full w-full object-cover border-4  rounded-full" />

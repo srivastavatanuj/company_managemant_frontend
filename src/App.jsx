@@ -7,6 +7,7 @@ import Project from "./pages/project/Project.jsx";
 import ProjectDetails from "./pages/project/ProjectDetails.jsx";
 import Contact from "./pages/ContactUs/contact.jsx";
 import AddProject from "./pages/project/AddProject.jsx";
+import AboutUs from "./pages/aboutUs/AboutUs.jsx";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/employee" element={<EmployeeList />} />
         <Route path="/employee/:id" element={<EmployeeDetail />} />
         <Route path="/add-project" element={<AddProject />} />
+        <Route path="/aboutus" element={<AboutUs/>}/>
       </Routes>
     </>
   );
