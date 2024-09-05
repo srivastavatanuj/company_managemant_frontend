@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -31,6 +32,7 @@ const Project = () => {
       <div className="flex flex-col items-center justify-center min-h-screen ">
         <h1 className="text-2xl sm:text-4xl font-bold mb-8 sm:mb-12 mt-5">Our Projects</h1>
 
+<<<<<<< HEAD
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {data.map((project, index) => (
             <div key={index} className="relative">
@@ -40,6 +42,17 @@ const Project = () => {
                 <div className="flex flex-col  h-full">
                   <img
                     className="w-full h-48 object-cover  rounded-t-lg"
+=======
+        <div className=" block grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7">
+          {data.map((project, index) => (
+            <div key={index} className="relative">
+              <Link
+                to={`/project/${project.id}`}>
+
+                <div className="flex flex-col  h-full">
+                  <img
+                    className="w-full h-48 object-cover rounded-t-lg fit"
+>>>>>>> dev-ritesh
                     src={project.Project_image}
                     alt="Project"
                   />
