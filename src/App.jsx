@@ -8,11 +8,12 @@ import ProjectDetails from "./pages/project/ProjectDetails.jsx";
 import Contact from "./pages/ContactUs/contact.jsx";
 import AddProject from "./pages/project/AddProject.jsx";
 import AboutUs from "./pages/aboutUs/AboutUs.jsx";
+import AddEmployee from "./pages/Employee/AddEmployee.jsx";
 
 
 function App() {
   return (
-    <>
+    <div className=" h-screen">
       <Routes>
         <Route path="/login" element={<LoginForm />} />
         <Route path="/project" element={<Project/>}/>
@@ -23,8 +24,9 @@ function App() {
         <Route path="/employee/:id" element={<EmployeeDetail />} />
         <Route path="/add-project" element={<AddProject />} />
         <Route path="/aboutus" element={<AboutUs/>}/>
+        <Route path="/addemployee" element={<AddEmployee/>}/>
       </Routes>
-    </>
+    </div>
   );
 }
 

@@ -5,8 +5,7 @@ const EmployeeList = () => {
 
 
     const [employees, setEmployees] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+   
 
     useEffect(() => {
         const fetchEmployeeData = async () => {
@@ -17,23 +16,16 @@ const EmployeeList = () => {
                 }
                 const data = await response.json();
                 setEmployees(data);
-                setLoading(false);
+              
             } catch (error) {
-                setError('Error fetching employee data');
-                setLoading(false);
+
+            
             }
         };
         fetchEmployeeData();
     }, []);
 
-    if (loading) {
-        return <p className="text-center mt-4">Loading...</p>;
-    }
-
-    if (error) {
-        return <p className="text-center mt-4 text-red-500">Error: {error}</p>;
-    }
-
+   
     return (
         <div className="p-4 sm:p-6 min-h-screen">
 

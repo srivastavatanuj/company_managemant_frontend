@@ -14,7 +14,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <Header />
-      <App className="h-full min-h-screen"/>
+      <App/>
       <Footer />
     </BrowserRouter>
   </StrictMode>,

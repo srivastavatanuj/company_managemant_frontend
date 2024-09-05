@@ -4,6 +4,7 @@ import img from '../../assets/images/Kurmatologo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -19,7 +20,15 @@ const Header = () => {
 
           <div className="hidden md:flex items-center space-x-4 flex-grow justify-center gap-8 text-2xl ">
             <Link to="/home" className="text-gray-700 hover:text-gray-900">Home</Link>
-            <Link to="/employee" className="text-gray-700 hover:text-gray-900">Employee</Link>
+            <div>
+              <button onClick={() => setIsOpen(!isOpen)}>Employee</button>
+              {isOpen && (
+                <div className=''>
+                  <Link to="/employee" className="text-gray-700 hover:text-gray-900">View Employee</Link>
+                  <p>Add Employee</p>
+                </div>
+              )}
+            </div>
             <Link to="/project" className="text-gray-700 hover:text-gray-900">Project</Link>
           </div>
 
