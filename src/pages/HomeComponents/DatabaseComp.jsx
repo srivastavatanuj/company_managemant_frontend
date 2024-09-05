@@ -1,0 +1,39 @@
+import React from 'react'
+
+import middleimage1 from '../../assets/middleimage1.png';
+import middleimage2 from '../../assets/middleimage2.png';
+const DatabaseComp = () => {
+  return (
+    <div className='mx-16 mt-14'>
+      
+      <div className="text-lg sm:text-3xl text-center font-semibold py-4 sm:py-6">
+          <h1>Secure Employee Database Management</h1>
+        </div>
+
+        <div className="w-full text-center px-4 mb-5 flex justify-center">
+          <h3 className="text-base sm:text-lg md:text-xl w-full md:w-2/3 lg:w-1/2">
+            Seamless and secure is the motto we live by. We ensure that the privacy of
+            business and employee data gets the foremost attention. Here's how we handle security.
+          </h3>
+        </div>
+
+        {/* Middle 2 Images */}
+        <div className="flex flex-col sm:flex-row justify-evenly items-center  sm:mt-12 md:mt-20">
+          <div className="flex flex-col items-center mb-6 sm:mb-0 w-full sm:w-1/2 px-4">
+            <img className="shadow-lg border-4 border-gray-300 w-full h-auto object-cover" src={middleimage1} alt="Secure password management" />
+            <div>
+              <h1 className="text-center text-base sm:text-lg md:text-xl  mt-2">Secure password management using Zoho Vault</h1>
+            </div>
+          </div>
+          <div className="flex flex-col items-center mb-6 sm:mb-0 w-full sm:w-1/2 px-4">
+            <img className="shadow-lg border-4 border-gray-300 w-full h-auto object-cover" src={middleimage2} alt="Shielded access to employee info" />
+            <div>
+              <h1 className="text-center text-base sm:text-lg md:text-xl  mt-2">Shielded access to employee info</h1>
+            </div>
+          </div>
+        </div>
+    </div>
+  )
+}
+
+export default DatabaseComp
