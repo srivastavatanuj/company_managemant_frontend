@@ -1,75 +1,85 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Project = () => {
-  const url = "https://kashishpal123.pythonanywhere.com/projects/create_projects/";
+  const url = "https://kashishpal123.pythonanywhere.com/projects/Listprojects/";
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const fetchInfo = async () => {
-    try {
-      const res = await fetch(url);
-      const json = await res.json();
-      setData(json);
-    } catch (error) {
-      console.error("Error fetching data: ", error);
-    }
-
-  };
+  const navigate = useNavigate();
 
   useEffect(() => {
-    fetchInfo();
+    const fetchInfo = async () => {
+      try {
+        const res = await fetch(url);
 
+
+        if (!res.ok) {
+          setLoading(false);
+          navigate("/errorpage");
+          throw new Error(
+            `Failed to fetch employee data, status code: ${res.status}`
+          );
+        }
+        console.log("......", res);
+        const json = await res.json();
+        setData(json);
+        setLoading(false);
+
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      }
+    };
+    fetchInfo();
   }, []);
 
-  return (
-    <>
-<div className="px-10">
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-        <h1 className="text-4xl font-bold mb-12 mt-5">Our Projects</h1>
+  if (loading) {
+    return <p className="text-center mt-4">Loading...</p>;
+  }
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-">
+  return (
+    <div className="px-4 sm:px-10">
+      <div className="flex flex-col items-center justify-center my-4 ">
+        <h1 className="text-2xl sm:text-4xl font-bold mb-8 sm:mb-12  ">
+          Our Projects
+        </h1>
+
+        <div className="  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7 ">
           {data.map((project, index) => (
             <div key={index} className="relative">
-              <Link
-                to={`/project/${index}`}
-                className="block p-6 my-2 text-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-lg shadow-lg transform transition hover:scale-105 hover:shadow-2xl "
-                style={{ width: "250px", height: "350px" }}
-              >
-                <div className="absolute inset-x-0 top-0 text-center text-sm font-bold tracking-wider py-2 uppercase bg-black bg-opacity-50 rounded-t-lg">
-                  {`Project ${index + 1}`}
-                </div>
-
-                <div className="flex flex-col justify-center h-full">
-                  <img className="w-250px h-350px object-center from-transparent"src={project.img}alt="img"
-                  /><h2 className="text-2xl font-bold mb-4">{project.Project_name}</h2>
-                  <h3 className="text-sm opacity-75">Project Description</h3>
-                  <p className="text-sm opacity-75">{project.Description}</p>
+              <Link to={`/project/${project.id}`}>
+                <div className="flex flex-col  h-full shadow-lg transform transition hover:scale-105 hover:shadow-2xl">
+                  <img
+                    className="w-full h-48 object-cover rounded-t-lg fit "
+                    src={project.Project_image}
+                    alt="Project"
+                  />
+                  <h2 className="text-lg bg-[#EBE5E5] text-center rounded-b-lg  sm:text-lg font-bold">
+                    {project.Project_name}
+                  </h2>
                 </div>
               </Link>
             </div>
           ))}
 
+          <div className="relative  rounded-lg shadow-lg  h-full transform transition hover:scale-105 hover:shadow-2xl "  >
+            <Link
+              to="/add-project"
 
-          <div className="relative">
-          <Link
-  to="/add-project"
-  className="block p-6 my-2 text-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-lg shadow-lg transform transition hover:scale-105 hover:shadow-2xl mb-5"
-  style={{ width: "250px", height: "350px" }}
->
-  <div className="absolute inset-x-0 top-0 text-center text-sm font-bold tracking-wider py-2 uppercase bg-black bg-opacity-50 rounded-t-lg">ADD PROJECT
 
-  </div>
+            >
+              <div className="absolute inset-x-0 top-0 text-white text-center text-xs sm:text-sm font-bold tracking-wider py-2 uppercase bg-black bg-opacity-50 rounded-t-lg">
+                ADD PROJECT
+              </div>
 
-  <div className="flex justify-center items-center h-full">
-    <div className="text-9xl">+</div>
-  </div>
-</Link>
-
+              <div className="flex justify-center items-center h-full">
+                <div className="text-6xl sm:text-9xl">+</div>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
-      </div>
-    </>
+    </div>
   );
 };
 
