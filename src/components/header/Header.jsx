@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import img from "../../assets/images/Kurmatologo.png";
+import HeaderEmployee from "./HeaderEmployee";
+import HeaderProject from "./HeaderProject";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -12,35 +13,27 @@ const Header = () => {
 
   return (
     <header className="bg-white shadow-md">
-      <nav className="container mx-auto px-4 py-8">
-        <div className="flex justify-between items-center">
+      <nav className="container mx-auto  py-8">
+        <div className="flex justify-evenly items-center">
           {/* Logo */}
           <img className="h-10 w-auto" src={img} alt="Kurmato Logo" />
 
-          <div className="hidden md:flex items-center space-x-4 flex-grow justify-center gap-8 text-2xl ">
+          <div className="hidden md:flex items-center  flex-grow justify-center gap-8 text-2xl ">
             <Link to="/home" className="text-gray-700 hover:text-gray-900">Home</Link>
-            <div>
-              <button onClick={() => setIsOpen(!isOpen)}>Employee</button>
-              {isOpen && (
-                <div className=''>
-                  <Link to="/employee" className="text-gray-700 hover:text-gray-900">View Employee</Link>
-                  <p>Add Employee</p>
-                </div>
-              )}
-            </div>
-            <Link to="/project" className="text-gray-700 hover:text-gray-900">Project</Link>
-          </div>
 
+            {/* Employee Component */}
+            <HeaderEmployee />
+            <HeaderProject />
+
+          </div>
+          {/* Contect us Button */}
           <div className="hidden md:flex items-center space-x-4">
             <Link
               to="/contact"
-              className="bg-blue-950 text-white px-4 py-2 rounded hover:bg-blue-800"
+              className="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-950"
             >
               Contact Us
             </Link>
-            {/* <Link to="/login" className="bg-blue-950 text-white px-4 py-2 rounded hover:bg-blue-800">
-              Log In
-            </Link> */}
           </div>
 
           {/* Three line menu for mobile */}
@@ -91,9 +84,6 @@ const Header = () => {
             >
               Contact Us
             </Link>
-            {/* <Link to="/login" className="block py-2 mt-2 bg-blue-950 text-white px-4 rounded hover:bg-blue-800">
-              Log In
-            </Link> */}
           </div>
         )}
       </nav>

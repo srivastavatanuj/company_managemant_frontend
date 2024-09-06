@@ -13,7 +13,7 @@ import AddEmployee from "./pages/Employee/AddEmployee.jsx";
 
 function App() {
   return (
-    <div className=" h-screen">
+    <div>
       <Routes>
         <Route path="/login" element={<LoginForm />} />
         <Route path="/project" element={<Project/>}/>
