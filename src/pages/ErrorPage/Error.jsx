@@ -15,7 +15,7 @@ const Error = () => {
         </p>
 
         <Link to="/">
-          <button className="mt-8 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300">
+           <button className="mt-8 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300">
             Go Back
           </button>
         </Link>
@@ -24,8 +24,8 @@ const Error = () => {
       <div className="">
         <img
           src={image}
-          alt="Error Illustration"
-          className="w-52 h-52 rounded-lg shadow-lg"
+          alt="Error "
+          className="w-52 h-52 rounded-lg "
         />
       </div>
     </div>
