@@ -15,16 +15,16 @@ function App() {
   return (
     <div>
       <Routes>
+        <Route path="" element={<Home />} />
         <Route path="/login" element={<LoginForm />} />
-        <Route path="/project" element={<Project/>}/>
-        <Route path="/project/:id" element={<ProjectDetails />}/>
-        <Route path="/home" element={<Home />} />
+        <Route path="/project/:id" element={<ProjectDetails />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/employee" element={<EmployeeList />} />
-        <Route path="/employee/:id" element={<EmployeeDetail />} />
         <Route path="/add-project" element={<AddProject />} />
-        <Route path="/aboutus" element={<AboutUs/>}/>
-        <Route path="/addemployee" element={<AddEmployee/>}/>
+        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/addemployee" element={<AddEmployee />} />
+        <Route path="project" element={<Project />} />
+        <Route path="/employee/:id" element={<EmployeeDetail />} />
       </Routes>
     </div>
   );

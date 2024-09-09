@@ -4,54 +4,48 @@ import { baseUrl } from '../../Constants';
 
 const EmployeeDetail = () => {
     const { id } = useParams();
-    // console.log(id)
-    // const id = 123456
     const [employee, setEmployee] = useState(null);
-    const [test,setTest]=useState(5)
+    // console.log(baseUrl)
 
     const fetchEmployee = async () => {
         try {
             const response = await fetch(`${baseUrl}/${id}/`);
+           
             if (!response.ok) {
                 throw new Error(`Failed to fetch employee data, status code: ${response.status}`);
             }
             const data = await response.json();
-            console.log(data)
+            // console.log(data,"data............")
+            // console.log(response, "response ")
+            // console.log(employee.employee_data.Profile_image,".....")
             setEmployee(data);
         } catch (err) {
             console.error("Error fetching employee data:", err);
-        }
+        }   
     };
-    
 
     useEffect(() => {
         fetchEmployee();
-        {console.log("2",employee)}
-        setTest(10)
     }, [id]);
 
-    {console.log("3",employee)}
-
     return (
-        <div className='max-w-4xl w-full p-4 md:p-8 my-16 mx-auto shadow-md'>
-            <h1 className="text-xl md:text-2xl font-bold text-center bg-gray-200 text-slate-900 p-2">Employee Details</h1>
+        <div className='max-w-5xl h-full w-full p-4 md:p-8 my-16 mx-auto shadow-md'>
+            <h1 className="text-xl md:text-3xl font-bold text-center bg-gray-200 text-slate-900 p-2">Employee Details</h1>
 
             <div className="flex flex-col md:flex-row items-center justify-between mt-6">
-                <div className='mb-6 md:mb-0'>
-                    {console.log("1",employee)}
-                    {console.log("1678687",test)}
+                <div className='mb-6 md:mb-0 md:w-1/2 flex justify-center'>
                     <img
-                        className='h-40 w-40 md:h-64 md:w-64 object-cover rounded-full border-2'
-                        src={employee?.Profile_image}
+                        className='h-48 w-48 md:h-96 md:w-96 mt-10 object-cover rounded-full border-2 transition-transform transform hover:scale-105 hover:shadow-lg hover:border-gray-400 duration-300 ease-in-out'
+                        src={employee?.employee_data.Profile_image}
                         alt="Employee"
                     />
                 </div>
-                <div className="text-gray-700 space-y-4 md:space-y-7 text-center md:text-left">
-                    <p><strong>Name:</strong> {employee?.Employee_name}</p>
-                    <p><strong>Designation:</strong> {employee?.Designation}</p>
-                    <p className='text-wrap'><strong>Skills:</strong> {employee?.Skills}</p>
-                    <p><strong>Date of Joining:</strong> {employee?.Joining_date}</p>
-                    <p><strong>Email:</strong> {employee?.email}</p>
+                <div className="text-gray-700 text-lg md:text-2xl mt-12 space-y-4 md:space-y-7 text-center md:text-left md:w-1/2 transition-colors hover:text-gray-900 duration-300 ease-in-out">
+                    <p><strong>Name:</strong> {employee?.employee_data.Employee_name}</p>
+                    <p><strong>Designation:</strong> {employee?.employee_data.Designation}</p>
+                    <p className='break-words'><strong>Skills:</strong> {employee?.employee_data.Skills}</p>
+                    <p><strong>Date of Joining:</strong> {employee?.employee_data.Joining_date}</p>
+                    <p><strong>Email:</strong> {employee?.employee_data.email}</p>
                 </div>
             </div>
         </div>

@@ -3,12 +3,12 @@ import img from '../../assets/1image.png';
 
 const EmpDetails = () => {
   return (
-    <div className=" mt-14  mx-20">
+    <div className="md:mx-40 mt-14 px-4">
       <div className="flex flex-col md:flex-row items-center justify-between">
         {/* Image Section */}
         <div className="w-full md:w-1/2 flex justify-center md:justify-start mb-4 md:mb-0">
           <img
-            className="h-auto w-full max-w-xs md:max-w-md object-cover rounded-md"
+            className="h-auto w-full max-w-xs md:max-w-md lg:max-w-lg object-cover rounded-md"
             src={img}
             alt="Onboarding"
           />
@@ -16,7 +16,7 @@ const EmpDetails = () => {
 
         {/* Text Section */}
         <div className="flex flex-col w-full md:w-1/2 md:pl-6">
-          <h1 className="text-xl sm:text-2xl font-semibold text-center md:text-left md:text-3xl lg:text-2xl">
+          <h1 className="text-xl sm:text-2xl font-semibold text-center md:text-left md:text-3xl lg:text-4xl">
             Customized onboarding for the best employee experience
           </h1>
           <h3 className="mt-2 text-sm sm:text-base text-center md:text-left md:text-xl lg:text-lg">
