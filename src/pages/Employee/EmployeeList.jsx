@@ -5,32 +5,34 @@ const EmployeeList = () => {
 
 
     const [employees, setEmployees] = useState([]);
-   
+
 
     useEffect(() => {
         const fetchEmployeeData = async () => {
             try {
                 const response = await fetch('https://kashishpal123.pythonanywhere.com/employees/employee-list/');
+                // console.log(response, "Api checking")
                 if (!response.ok) {
                     throw new Error('Failed to fetch employee data');
+
                 }
                 const data = await response.json();
                 setEmployees(data);
-              
+                // console.log(data, "data............")
+
             } catch (error) {
 
-            
+
             }
         };
         fetchEmployeeData();
     }, []);
 
-   
+
     return (
         <div className="p-4 mx-12 sm:p-6">
 
             <h1 className="text-2xl  sm:text-3xl font-bold mb-4 sm:mb-6 text-center">Employee List</h1>
-            
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
                 {employees.map((employee) => (
                     <Link to={`/employee/${employee.Employee_id}`} key={employee.Employee_id} >

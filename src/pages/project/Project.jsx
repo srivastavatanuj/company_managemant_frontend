@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Project = () => {
   const url = "https://kashishpal123.pythonanywhere.com/projects/Listprojects/";
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
 
   const fetchInfo = async () => {
     try {
@@ -44,11 +46,15 @@ const Project = () => {
                     alt="Project"
                   />
                   <h2 className="text-lg bg-[#EBE5E5] text-center rounded-b-lg  sm:text-lg font-bold">{project.Project_name}</h2>
+
                 </div>
               </Link>
             </div>
           ))}
 
+          <div className="relative  rounded-lg shadow-lg  h-full transform transition hover:scale-105 hover:shadow-2xl "  >
+            <Link
+              to="/add-project"
 
           <div className="relative">
             <Link

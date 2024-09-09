@@ -9,6 +9,8 @@ import Contact from "./pages/ContactUs/contact.jsx";
 import AddProject from "./pages/project/AddProject.jsx";
 import AboutUs from "./pages/aboutUs/AboutUs.jsx";
 import AddEmployee from "./pages/Employee/AddEmployee.jsx";
+import ErrorPage from "./pages/ErrorPage/Error.jsx"
+
 
 
 function App() {
@@ -18,13 +20,14 @@ function App() {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/project" element={<Project/>}/>
         <Route path="/project/:id" element={<ProjectDetails />}/>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/employee" element={<EmployeeList />} />
         <Route path="/employee/:id" element={<EmployeeDetail />} />
         <Route path="/add-project" element={<AddProject />} />
         <Route path="/aboutus" element={<AboutUs/>}/>
         <Route path="/addemployee" element={<AddEmployee/>}/>
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>
   );
