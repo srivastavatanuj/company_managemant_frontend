@@ -3,7 +3,7 @@ import employee from '../../assets/employee.png';
 
 const EmployeeManagement = () => {
   return (
-    <div className='mx-24 mt-14 '>
+    <div className='mx-24 mt-2'>
        <div className="text-center px-4 py-6">
           <h1 className="text-xl sm:text-2xl sm:mt-8 md:text-2xl font-semibold lg:text-3xl">Employee Project Management</h1>
           <h3 className="text-base sm:text-lg md:text-xl mt-4 mx-auto max-w-3xl">

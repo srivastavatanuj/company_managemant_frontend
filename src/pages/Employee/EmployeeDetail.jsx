@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { baseUrl } from '../../Constants';
 
 
 const EmployeeDetail = () => {
-    // const { id } = useParams();
-    // console.log(id)
-    const id = 123456
+
+    const { id } = useParams();
     const [employee, setEmployee] = useState(null);
     const [test,setTest]=useState(5)
 
     const fetchEmployee = async () => {
         try {
-            const response = await fetch(`{https://kashishpal123.pythonanywhere.com/employees/retrieve-employee/}${id}`);
+            const response = await fetch(`${baseUrl}/${id}/`);
             if (!response.ok) {
                 throw new Error(`Failed to fetch employee data, status code: ${response.status}`);
             }
@@ -22,15 +22,10 @@ const EmployeeDetail = () => {
             console.error("Error fetching employee data:", err);
         }
     };
-
-
     useEffect(() => {
         fetchEmployee();
-        {console.log("2",employee)}
-        setTest(10)
     }, [id]);
 
-    {console.log("3",employee)}
 
     return (
         <div className='max-w-4xl w-full p-4 md:p-8 my-16 mx-auto shadow-md'>
@@ -38,8 +33,7 @@ const EmployeeDetail = () => {
 
             <div className="flex flex-col md:flex-row items-center justify-between mt-6">
                 <div className='mb-6 md:mb-0'>
-                    {console.log("1",employee)}
-                    {console.log("1678687",test )}
+             
                     <img
                         className='h-40 w-40 md:h-64 md:w-64 object-cover rounded-full border-2'
                         src={employee?.Profile_image}

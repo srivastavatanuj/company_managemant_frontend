@@ -6,57 +6,47 @@ const Project = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const navigate = useNavigate();
+
+  const fetchInfo = async () => {
+    try {
+      const res = await fetch(url);
+      const json = await res.json();
+      setData(json);
+    } catch (error) {
+      console.error("Error fetching data: ", error);
+    }
+  };
 
   useEffect(() => {
-    const fetchInfo = async () => {
-      try {
-        const res = await fetch(url);
-
-
-        if (!res.ok) {
-          setLoading(false);
-          navigate("/errorpage");
-          throw new Error(
-            `Failed to fetch employee data, status code: ${res.status}`
-          );
-        }
-        console.log("......", res);
-        const json = await res.json();
-        setData(json);
-        setLoading(false);
-
-      } catch (error) {
-        console.error("Error fetching data: ", error);
-      }
-    };
     fetchInfo();
   }, []);
 
-  if (loading) {
-    return <p className="text-center mt-4">Loading...</p>;
-  }
+  const truncateText = (text, maxLength) => {
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength) + "...";
+    }
+    return text;
+  };
 
   return (
     <div className="px-4 sm:px-10">
-      <div className="flex flex-col items-center justify-center my-4 ">
-        <h1 className="text-2xl sm:text-4xl font-bold mb-8 sm:mb-12  ">
-          Our Projects
-        </h1>
+      <div className="flex flex-col items-center justify-center min-h-screen ">
+        <h1 className="text-2xl sm:text-4xl font-bold mb-8 sm:mb-12 mt-5">Our Projects</h1>
 
-        <div className="  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7 ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {data.map((project, index) => (
             <div key={index} className="relative">
-              <Link to={`/project/${project.id}`}>
-                <div className="flex flex-col  h-full shadow-lg transform transition hover:scale-105 hover:shadow-2xl">
+              <Link
+                to={`/project/${index}`}>
+
+                <div className="flex flex-col  h-full">
                   <img
-                    className="w-full h-48 object-cover rounded-t-lg fit "
+                    className="w-full h-48 object-cover  rounded-t-lg"
                     src={project.Project_image}
                     alt="Project"
                   />
-                  <h2 className="text-lg bg-[#EBE5E5] text-center rounded-b-lg  sm:text-lg font-bold">
-                    {project.Project_name}
-                  </h2>
+                  <h2 className="text-lg bg-[#EBE5E5] text-center rounded-b-lg  sm:text-lg font-bold">{project.Project_name}</h2>
+
                 </div>
               </Link>
             </div>
@@ -66,9 +56,13 @@ const Project = () => {
             <Link
               to="/add-project"
 
-
+          <div className="relative">
+            <Link
+              to="/add-project"
+              className="block p-4 sm:p-6 my-2 text-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-lg shadow-lg transform transition hover:scale-105 hover:shadow-2xl"
+              style={{ width: "100%", maxWidth: "250px", height: "350px" }}
             >
-              <div className="absolute inset-x-0 top-0 text-white text-center text-xs sm:text-sm font-bold tracking-wider py-2 uppercase bg-black bg-opacity-50 rounded-t-lg">
+              <div className="absolute inset-x-0 top-0 text-center text-xs sm:text-sm font-bold tracking-wider py-2 uppercase bg-black bg-opacity-50 rounded-t-lg">
                 ADD PROJECT
               </div>
 
