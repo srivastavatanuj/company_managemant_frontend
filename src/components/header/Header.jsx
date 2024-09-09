@@ -1,53 +1,64 @@
 import React, { useState } from 'react';
-import DesktopMenu from '../HeaderComponents/DesktopMenu';
-import MobileMenu from '../HeaderComponents/MobileMenu';
-import Logo from '../HeaderComponents/Logo.';
-
+import { Link } from 'react-router-dom';
+import img from '../../assets/images/Kurmatologo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isEmployeeMenuOpen, setIsEmployeeMenuOpen] = useState(false);
-  const [isProjectMenuOpen, setIsProjectMenuOpen] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(prev => !prev);
-  const toggleEmployeeMenu = () => setIsEmployeeMenuOpen(prev => !prev);
-  const toggleProjectMenu = () => setIsProjectMenuOpen(prev => !prev);
-  const closeMenus = () => {
-    setIsMenuOpen(false);
-    setIsEmployeeMenuOpen(false);
-    setIsProjectMenuOpen(false);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <div className="bg-white shadow-md">
-      <div className="container mx-auto py-6 flex justify-between items-center">
-       <Logo/>
+    <header className="bg-white shadow-md">
+      <nav className="container mx-auto px-4 py-8">
+        <div className="flex justify-between items-center">
+          {/* Logo */}
+          <img className="h-10 w-auto" src={img} alt="Kurmato Logo" />
 
-        <DesktopMenu
-          isEmployeeMenuOpen={isEmployeeMenuOpen}
-          toggleEmployeeMenu={toggleEmployeeMenu}
-          isProjectMenuOpen={isProjectMenuOpen}
-          toggleProjectMenu={toggleProjectMenu}
-          closeMenus={closeMenus}
-        />
 
-        <button className="md:hidden text-gray-500" onClick={toggleMenu}>
-          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
+          <div className="hidden md:flex items-center space-x-4 flex-grow justify-center gap-8 text-2xl ">
+            <Link to="/" className="text-gray-700 hover:text-gray-900">Home</Link>
+            <Link to="/employee" className="text-gray-700 hover:text-gray-900">Employee</Link>
+            <Link to="/project" className="text-gray-700 hover:text-gray-900">Project</Link>
+          </div>
 
-      <MobileMenu
-        isMenuOpen={isMenuOpen}
-        toggleEmployeeMenu={toggleEmployeeMenu}
-        isEmployeeMenuOpen={isEmployeeMenuOpen}
-        toggleProjectMenu={toggleProjectMenu}
-        isProjectMenuOpen={isProjectMenuOpen}
-        closeMenus={closeMenus}
-      />
-    </div>
- 
+          <div className="hidden md:flex items-center space-x-4">
+            <Link to="/contact" className="bg-blue-950 text-white px-4 py-2 rounded hover:bg-blue-800">
+              Contact Us
+            </Link>
+            {/* <Link to="/login" className="bg-blue-950 text-white px-4 py-2 rounded hover:bg-blue-800">
+              Log In
+            </Link> */}
+          </div>
+
+          {/* Three line menu for mobile */}
+          <button
+            className="md:hidden text-gray-500 focus:outline-none"
+            onClick={toggleMenu}
+          >
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Mobile menu */}
+        {isMenuOpen && (
+          <div className="md:hidden mt-4">
+            <Link to="/home" className="block py-2 text-gray-700 hover:text-gray-900">Home</Link>
+            <Link to="/employee" className="block py-2 text-gray-700 hover:text-gray-900">Employee</Link>
+            <Link to="/project" className="block py-2 text-gray-700 hover:text-gray-900">Project</Link>
+            <Link to="/contact" className="block py-2 mt-4 bg-blue-950 text-white px-4 rounded hover:bg-blue-800">
+              Contact Us
+            </Link>
+            {/* <Link to="/login" className="block py-2 mt-2 bg-blue-950 text-white px-4 rounded hover:bg-blue-800">
+              Log In
+            </Link> */}
+          </div>
+        )}
+      </nav>
+    </header>
   );
 };
 
