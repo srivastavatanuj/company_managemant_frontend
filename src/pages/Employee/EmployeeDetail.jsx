@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { baseUrl } from '../../Constants';
 
+
 const EmployeeDetail = () => {
+
     const { id } = useParams();
     const [employee, setEmployee] = useState(null);
     // console.log(baseUrl)
@@ -23,7 +25,6 @@ const EmployeeDetail = () => {
             console.error("Error fetching employee data:", err);
         }   
     };
-
     useEffect(() => {
         fetchEmployee();
     }, [id]);

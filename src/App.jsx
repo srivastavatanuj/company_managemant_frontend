@@ -9,6 +9,8 @@ import Contact from "./pages/ContactUs/contact.jsx";
 import AddProject from "./pages/project/AddProject.jsx";
 import AboutUs from "./pages/aboutUs/AboutUs.jsx";
 import AddEmployee from "./pages/Employee/AddEmployee.jsx";
+import ErrorPage from "./pages/ErrorPage/Error.jsx"
+
 
 
 function App() {

@@ -18,6 +18,7 @@ const EmployeeList = () => {
                 }
                 const data = await response.json();
                 setEmployees(data);
+
             
             } catch (error) {
 
