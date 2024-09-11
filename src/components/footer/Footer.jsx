@@ -14,7 +14,7 @@ const Footer = () => {
                     <Icons />
                 </div>
                 <FooterText />
-                <div className="mt-8 flex justify-center  items-center">
+                <div className="mt-8 ">
                     <Copyright />
                 </div>
             </footer>

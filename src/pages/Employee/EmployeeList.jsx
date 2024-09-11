@@ -49,21 +49,7 @@ const EmployeeList = () => {
                 ))}
 
 
-                <div className="relative bg-gradient-to-b rounded-xl to-[#858282] from-[#EBE5E5]  shadow-lg  h-full transform transition hover:scale-105 hover:shadow-2xl "  >
-                    <Link
-                        to="/addemployee"
-
-
-                    >
-                        <div className="absolute inset-x-0 top-0 text-white text-center text-xs sm:text-sm font-bold tracking-wider py-2 uppercase bg-black bg-opacity-50 rounded-t-lg">
-                            ADD Employee
-                        </div>
-
-                        <div className="flex justify-center items-center h-full">
-                            <div className="text-6xl sm:text-9xl">+</div>
-                        </div>
-                    </Link>
-                </div>
+              
             </div>
         </div>
 

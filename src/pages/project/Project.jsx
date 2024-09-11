@@ -50,19 +50,7 @@ const Project = () => {
             </div>
           ))}
 
-          <div className="relative rounded-lg shadow-lg h-full transform transition hover:scale-105 hover:shadow-2xl">
-            <Link to="/add-project">
-              <div className="relative block p-4 sm:p-6 my-2 text-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white rounded-lg shadow-lg transform transition hover:scale-105 hover:shadow-2xl" style={{ width: "100%", maxWidth: "250px", height: "350px" }}>
-                <div className="absolute inset-x-0 top-0 text-center text-xs sm:text-sm font-bold tracking-wider py-2 uppercase bg-black bg-opacity-50 rounded-t-lg">
-                  ADD PROJECT
-                </div>
-
-                <div className="flex justify-center items-center h-full">
-                  <div className="text-6xl sm:text-9xl">+</div>
-                </div>
-              </div>
-            </Link>
-          </div>
+       
         </div>
       </div>
     </div>
