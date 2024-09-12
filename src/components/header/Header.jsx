@@ -21,6 +21,8 @@ const Header = () => {
             <Link to="/" className="text-gray-700 hover:text-gray-900">Home</Link>
             <Link to="/employee" className="text-gray-700 hover:text-gray-900">Employee</Link>
             <Link to="/project" className="text-gray-700 hover:text-gray-900">Project</Link>
+            <Link to="/task" className="text-gray-700 hover:text-gray-900">Tasks</Link>
+
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -49,6 +51,8 @@ const Header = () => {
             <Link to="/home" className="block py-2 text-gray-700 hover:text-gray-900">Home</Link>
             <Link to="/employee" className="block py-2 text-gray-700 hover:text-gray-900">Employee</Link>
             <Link to="/project" className="block py-2 text-gray-700 hover:text-gray-900">Project</Link>
+            <Link to="/project" className="block py-2 text-gray-700 hover:text-gray-900">Task</Link>
+
             <Link to="/contact" className="block py-2 mt-4 bg-blue-950 text-white px-4 rounded hover:bg-blue-800">
               Contact Us
             </Link>

@@ -36,14 +36,16 @@ const Contact = () => {
   console.log(result);
   };
 
+
   return (
     <>
 
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center w-50 ">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
 
         <h1 className="text-3xl font-bold mb-6 text-gray-900">Contact Us</h1>
         <form onSubmit={handleSubmit}>
+
           <div className="mb-4">
             <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
             <input
@@ -59,7 +61,7 @@ const Contact = () => {
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
             <input
-              type="email"
+              type="number"
               id="email"
               name="Email"
               value={formData.Email}
