@@ -94,7 +94,12 @@ import React from 'react';
             id="technology"
             defaultValue=""
             className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+
+
           />
+<button className='bg-slate-500 mt-4 mx-60 w-20 h-10 rounded-2xl font-bold'>
+SUBMIT
+</button>
         </div>
       </form>
     </div>

@@ -29,7 +29,7 @@ const Project = () => {
 
   return (
     <div className="px-4 sm:px-10">
-      <div className="flex flex-col items-center justify-center min-h-screen">
+      <div className="flex flex-col items-center  min-h-screen">
         <h1 className="text-2xl sm:text-4xl font-bold mb-8 sm:mb-12 mt-5">
           Our Projects
         </h1>

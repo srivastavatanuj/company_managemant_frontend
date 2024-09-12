@@ -26,6 +26,7 @@ const Header = () => {
             <Link to="/project" className="text-gray-700 hover:text-gray-900">
               Project
             </Link>
+            {/* <Link to="/task" className="text-gray-700 hover:text-gray-900">Tasks</Link> */}
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -35,12 +36,12 @@ const Header = () => {
             >
               Contact Us
             </Link>
-            <Link
+            {/* <Link
               to="/login"
               className="bg-blue-950 text-white px-4 py-2 rounded hover:bg-blue-800"
             >
               Log In
-            </Link>
+            </Link> */}
           </div>
 
           {/* Three line menu for mobile */}

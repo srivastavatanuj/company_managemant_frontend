@@ -4,7 +4,7 @@ import image from "../../assets/images/ErrorCornerImage.png";
 
 const Error = () => {
   return (
-    <div  className="">
+    <div  className="leading-3 aspect-auto">
       <div className="flex flex-col items-center justify-center mt-20 ">
         <h1 className="text-9xl font-bold text-gray-800">404</h1>
         <h2 className="mt-4 text-2xl font-semibold text-gray-700">
@@ -15,7 +15,7 @@ const Error = () => {
         </p>
 
         <Link to="/">
-          <button className="mt-8 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300">
+           <button className="mt-8 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300">
             Go Back
           </button>
         </Link>
@@ -24,8 +24,8 @@ const Error = () => {
       <div className="">
         <img
           src={image}
-          alt="Error Illustration"
-          className="w-52 h-52 rounded-lg shadow-lg"
+          alt="Error "
+          className="w-77 h-60 rounded-lg "
         />
       </div>
     </div>
