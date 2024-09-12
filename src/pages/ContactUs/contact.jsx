@@ -1,23 +1,39 @@
 import React, { useState } from 'react';
 
+
+
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject:'',
-    message: '',
+    Name: '',
+    Email: '',
+    Subject:'',
+    Message: '',
 
   });
 
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = async (e) => {
+   await setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
 
-    console.log('Form data:', formData);
+  const handleSubmit = async(e) => {
+  e.preventDefault();
+  const response = await fetch('https://kashishpal123.pythonanywhere.com/contact_us/contact-us/', {
+    method: 'POST',
+    body: JSON.stringify(formData),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+  setFormData({
+    Name: '',
+    Email: '',
+    Subject:'',
+    Message: '',
+  });
+  const result = await response.json();
+  console.log(result);
   };
 
   return (
@@ -33,8 +49,8 @@ const Contact = () => {
             <input
               type="text"
               id="name"
-              name="name"
-              value={formData.name}
+              name="Name"
+              value={formData.Name}
               onChange={handleChange}
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               placeholder="Your Name"
@@ -45,8 +61,8 @@ const Contact = () => {
             <input
               type="email"
               id="email"
-              name="email"
-              value={formData.email}
+              name="Email"
+              value={formData.Email}
               onChange={handleChange}
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               placeholder="you@example.com"
@@ -57,8 +73,8 @@ const Contact = () => {
             <input
               type="text"
               id="subject"
-              name="subject"
-              value={formData.subject}
+              name="Subject"
+              value={formData.Subject}
               onChange={handleChange}
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               placeholder="your subject"
@@ -68,8 +84,8 @@ const Contact = () => {
             <label htmlFor="message" className="block text-sm font-medium text-gray-700">Message</label>
             <textarea
               id="message"
-              name="message"
-              value={formData.message}
+              name="Message"
+              value={formData.Message}
               onChange={handleChange}
               className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
               placeholder="Your message..."
@@ -90,3 +106,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
+

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import cardimage1 from '../../assets/cardimage1.png';
 import cardimage2 from '../../assets/cardimage2.png';
 import cardimage3 from '../../assets/cardimage3.png';
@@ -6,17 +6,27 @@ import cardimage4 from '../../assets/cardimage4.png';
 
 const Cards = () => {
   return (
-    <div className='mx-20 mt-14'> 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 my-8">
-          {[cardimage1, cardimage2, cardimage3, cardimage4].map((image, index) => (
-            <div key={index} className="border border-gray-300 rounded-lg shadow-lg p-4 flex flex-col items-center">
-              <img className=" h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24" src={image} alt={`Card ${index + 1}`} />
-              <h1 className="text-center mt-2 sm:mt-4 text-base sm:text-lg font-semibold">Card Content {index + 1}</h1>
-            </div>
-          ))}
+    <div className='mx-4 sm:mx-10 md:mx-20 lg:mx-40 mt-6 sm:mt-14 '>
+      <div className='flex flex-wrap justify-center md:justify-between gap-4'>
+        <div className='border-2 border-red-200 rounded-xl w-full sm:w-56 p-4 flex flex-col items-center'>
+          <img className='h-24 w-24' src={cardimage1} alt="cardimage1" />
+          <h1 className='text-center mt-4'>Increase employee data visibility across regions</h1>
         </div>
+        <div className='border-2 border-red-200 rounded-xl w-full sm:w-56 p-4 flex flex-col items-center'>
+          <img className='h-24 w-24' src={cardimage2} alt="cardimage2" />
+          <h1 className='text-center mt-4'>Guarantee secure data management and employee privacy</h1>
+        </div>
+        <div className='border-2 border-red-200 rounded-xl w-full sm:w-56 p-4 flex flex-col items-center'>
+          <img className='h-24 w-24' src={cardimage3} alt="cardimage3" />
+          <h1 className='text-center mt-4'>Customize and manage your workforce in your preferred way</h1>
+        </div>
+        <div className='border-2 border-red-200 rounded-xl w-full sm:w-56 p-4 flex flex-col items-center'>
+          <img className='h-24 w-24' src={cardimage4} alt="cardimage4" />
+          <h1 className='text-center mt-4'>Empower your employees with self-service portals</h1>
+        </div>
+      </div>
     </div>
   )
 }
 
-export default Cards
+export default Cards;

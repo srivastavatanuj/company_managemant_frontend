@@ -8,7 +8,6 @@ const ProjectDetails = () => {
     const [project, setProject] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-console.log("ritesh", id)
 
     useEffect(() => {
         const fetchProject = async () => {
@@ -44,40 +43,40 @@ console.log("ritesh", id)
     }
 
     return (
-        <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+        <div className="max-w-9xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden my-4 ">
             <div className="bg-purple-600 text-white text-center py-4">
-                <h1 className="text-3xl font-bold">Project Details</h1>
+                <h1 className="text-3xl font-bold">{project.Project_name}</h1>
             </div>
-            <div className="p-6">
-                <div className="flex flex-col md:flex-row">
-                    <div className="md:w-1/2">
-                        <h2 className="text-2xl font-bold mb-4">{project.Project_name}</h2>
-                        <p className="mb-4">
+            <div className="p-12 text-2xl  ">
+                <div className="flex flex-col md:flex-row  ">
+                    <div className="md:w-1/2 my-7 ">
+                        <h2 className="text-7xl font-bold mb-4 flex justify-center">{project.Project_name}</h2>
+                        <p className="flex justify-center my-6 ">
                             <strong>Start Date:</strong> {project.Start_date}
                         </p>
-                        <p className="mb-4">
+                        <p className=" flex justify-center my-6  ">
                             <strong>Deadline:</strong> {project.Deadline}
                         </p>
-                        <p className="mb-4">
+                        <p className=" flex justify-center my-6">
                             <strong>Manager:</strong> {project.Manager}
                         </p>
-<p className="mb-4">
-<strong>Technology:</strong> {project.Technology}
+                        <p className="flex justify-center my-6">
+                        <strong>Technology:</strong> {project.Technology}
 
-</p>
+                    </p>
 
                     </div>
                     <div className="flex justify-center md:w-1/2">
                         <img
                             src={project.Project_image}
                             alt="Project Illustration"
-                            className="rounded-lg shadow-md w-96 h-56 bg-slate-600"
+                            className="rounded-lg shadow-md h-96 w-2/3"
                         />
                     </div>
                 </div>
 
-                <h3 className="text-xl font-semibold text-center mt-6">Description</h3>
-                <p className="mt-2 w-auto text-center">{project.Description}</p>
+                <h3 className="text-3xl font-semibold text-center mt-6">Description</h3>
+                <p className=" text-xl mt-2 w-auto text-center">{project.Description}</p>
             </div>
         </div>
     );
