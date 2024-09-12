@@ -92,8 +92,8 @@ const ProjectDetails = () => {
         <p className=" text-xl mt-2 w-auto text-center">
           {project.Description}
         </p>
-<div className="font-semibold text-center text-3xl py-5">Team</div>
-
+        <div className="font-medium  text-5xl py-5">Team Members</div>
+        {/*
         <table className="w-full border-collapse">
   <thead>
     <tr>
@@ -109,11 +109,22 @@ const ProjectDetails = () => {
       </tr>
     ))}
   </tbody>
-</table>
-
-
-
-
+</table> */}
+        <div>
+          {" "}
+          {teamMembers.map((emp, index) => (
+            <div
+              key={index}
+              className="flex border rounded-lg shadow-lg py-5 mb-5 bg-gray-100"
+            >
+              <span className="font-bold ml-5">{index + 1}.</span>
+              <div className="flex justify-between w-full px-5 items-center">
+                <span>{emp.name}</span>
+                <span className="text-gray-500 text-right text-base italic">{emp.Emp_id}</span>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
