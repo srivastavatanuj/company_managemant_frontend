@@ -21,7 +21,7 @@ const Header = () => {
             <Link to="/" className="text-gray-700 hover:text-gray-900">Home</Link>
             <Link to="/employee" className="text-gray-700 hover:text-gray-900">Employee</Link>
             <Link to="/project" className="text-gray-700 hover:text-gray-900">Project</Link>
-            <Link to="/task" className="text-gray-700 hover:text-gray-900">Tasks</Link>
+            {/* <Link to="/task" className="text-gray-700 hover:text-gray-900">Tasks</Link> */}
 
           </div>
 

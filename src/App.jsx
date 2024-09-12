@@ -8,7 +8,7 @@ import ProjectDetails from "./pages/project/ProjectDetails.jsx";
 import Contact from "./pages/ContactUs/contact.jsx";
 import AddProject from "./pages/project/AddProject.jsx";
 import ErrorPage from "./pages/ErrorPage/Error.jsx";
-import Task from "./pages/Task/Task.jsx";
+// import Task from "./pages/Task/Task.jsx";
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
         <Route path="/employee/:id" element={<EmployeeDetail />} />
         <Route path="/add-project" element={<AddProject />} />
         <Route path="*" element={<ErrorPage />} />
-        <Route path="/task" element={<Task />} />
+        {/* <Route path="/task" element={<Task />} /> */}
       </Routes>
     </>
   );
