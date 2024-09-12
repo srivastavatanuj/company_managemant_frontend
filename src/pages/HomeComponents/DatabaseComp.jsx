@@ -4,7 +4,7 @@ import middleimage2 from '../../assets/middleimage2.png';
 
 const DatabaseComp = () => {
   return (
-    <div className='mx-4 sm:mx-10 md:mx-20 lg:mx-36 mt-14'>
+    <div className='mx-4 sm:mx-10 md:mx-20 lg:mx-36 mt-6 sm:mt-14'>
       
       <div className="text-lg sm:text-3xl text-center font-semibold">
         <h1>Secure Employee Database Management</h1>

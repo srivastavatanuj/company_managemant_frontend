@@ -3,8 +3,8 @@ import attendence from '../../assets/attendence.png';
 
 const Employee = () => {
   return (
-    <div className="md:mx-40 mt-14 px-4">
-      <div className="text-xl sm:text-2xl text-center mt-8 sm:mt-12 md:text-2xl font-semibold lg:text-3xl">
+    <div className="md:mx-40 mt-6 sm:mt-14 px-4">
+      <div className="text-xl font-semibold sm:text-2xl text-center mt-8 sm:mt-12 md:text-2xl  lg:text-3xl">
         <h1>Employee Onboarding Management</h1>
       </div>
 

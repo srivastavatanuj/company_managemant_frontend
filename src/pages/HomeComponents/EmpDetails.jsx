@@ -3,7 +3,7 @@ import img from '../../assets/1image.png';
 
 const EmpDetails = () => {
   return (
-    <div className="md:mx-40 mt-14 px-4">
+    <div className="md:mx-40 mt-6 sm:mt-14 px-4">
       <div className="flex flex-col md:flex-row items-center justify-between">
         {/* Image Section */}
         <div className="w-full md:w-1/2 flex justify-center md:justify-start mb-4 md:mb-0">

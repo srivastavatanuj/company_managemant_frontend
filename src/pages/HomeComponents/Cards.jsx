@@ -6,7 +6,7 @@ import cardimage4 from '../../assets/cardimage4.png';
 
 const Cards = () => {
   return (
-    <div className='mx-4 sm:mx-10 md:mx-20 lg:mx-40 mt-14'>
+    <div className='mx-4 sm:mx-10 md:mx-20 lg:mx-40 mt-6 sm:mt-14 '>
       <div className='flex flex-wrap justify-center md:justify-between gap-4'>
         <div className='border-2 border-red-200 rounded-xl w-full sm:w-56 p-4 flex flex-col items-center'>
           <img className='h-24 w-24' src={cardimage1} alt="cardimage1" />
