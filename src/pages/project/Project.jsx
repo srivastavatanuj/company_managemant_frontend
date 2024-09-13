@@ -59,7 +59,7 @@ const Project = () => {
             </div>
           ))}
 
-          <div className="relative rounded-lg shadow-lg h-full transform transition hover:scale-105 hover:shadow-2xl mb-40">
+          {/* <div className="relative rounded-lg shadow-lg h-full transform transition hover:scale-105 hover:shadow-2xl mb-40">
             <Link to="/add-project">
               <div className="relative h-full w-full">
 
@@ -73,7 +73,7 @@ const Project = () => {
                 </div>
               </div>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
