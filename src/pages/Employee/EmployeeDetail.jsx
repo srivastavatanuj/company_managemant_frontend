@@ -39,9 +39,11 @@ const EmployeeDetail = () => {
         <div className='p-4 md:p-8'>
             <div className='flex flex-col md:flex-row justify-center items-start md:items-center w-full max-w-6xl mx-auto'>
                 {/* Image Card */}
-                <div className='w-full md:w-1/3 p-4 flex justify-center'>
+                <div className='w-full md:w-1/3 p-4 flex justify-center
+             
+                '>
                     <img
-                        className='h-48 w-48 md:h-80 md:w-80 object-cover rounded-full shadow-md'
+                        className='h-48 w-48 md:h-64 md:w-64 object-cover rounded-full shadow-md'
                         src={employee?.employee_data.Profile_image}
                         alt="Employee"
                     />
@@ -107,7 +109,7 @@ const EmployeeDetail = () => {
                                 ))}
                             </ul>
                         ) : (
-                            <p className='text-center'>No projects available</p>
+                            <p className='text-xl md:w-1/3 font-semibold text-center bg-red-500 mt-2 p-2 rounded'>No projects available</p>
                         )}
                     </div>
                 </div>
