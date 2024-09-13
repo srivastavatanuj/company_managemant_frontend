@@ -16,7 +16,7 @@ const Header = () => {
           {/* Logo */}
           <img className="h-10 w-auto" src={img} alt="Kurmato Logo" />
 
-          <div className="hidden md:flex items-center space-x-4 flex-grow justify-center gap-8 text-2xl ">
+          <div className="hidden md:flex items-center space-x-4 flex-grow justify-center lg:gap-2 gap-6 text-xl font-medium">
             <Link to="/" className="text-gray-700 hover:text-gray-900">
               Home
             </Link>
