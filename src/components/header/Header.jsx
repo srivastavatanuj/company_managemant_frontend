@@ -68,6 +68,7 @@ const Header = () => {
         {/* Mobile menu */}
         {isMenuOpen && (
           <div className="md:hidden mt-4">
+<<<<<<< HEAD
             <Link
               to="/"
               className="block py-2 text-gray-700 hover:text-gray-900"
@@ -90,6 +91,14 @@ const Header = () => {
               to="/contact"
               className="block py-2 mt-4 bg-blue-950 text-white px-4 rounded hover:bg-blue-800"
             >
+=======
+            <Link to="/home" className="block py-2 text-gray-700 hover:text-gray-900">Home</Link>
+            <Link to="/employee" className="block py-2 text-gray-700 hover:text-gray-900">Employee</Link>
+            <Link to="/project" className="block py-2 text-gray-700 hover:text-gray-900">Project</Link>
+            {/* <Link to="/project" className="block py-2 text-gray-700 hover:text-gray-900">Task</Link> */}
+
+            <Link to="/contact" className="block py-2 mt-4 bg-blue-950 text-white px-4 rounded hover:bg-blue-800">
+>>>>>>> ritesh_2
               Contact Us
             </Link>
             <Link

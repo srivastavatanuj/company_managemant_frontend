@@ -51,6 +51,25 @@ const Project = () => {
               </Link>
             </div>
           ))}
+<<<<<<< HEAD
+=======
+
+          {/* <div className="relative rounded-lg shadow-lg h-full transform transition hover:scale-105 hover:shadow-2xl mb-40">
+            <Link to="/add-project">
+              <div className="relative h-full w-full">
+
+                <div className="absolute inset-x-0 top-0 text-white text-center text-xs sm:text-sm md:text-base lg:text-lg font-bold tracking-wider py-2 uppercase bg-black bg-opacity-50 rounded-t-lg">
+                  Add Project
+                </div>
+
+
+                <div className="flex justify-center items-center h-full px-4 sm:px-6 md:px-8 lg:px-10 ">
+                  <div className="text-6xl sm:text-8xl md:text-9xl lg:text-[4rem] ">+</div>
+                </div>
+              </div>
+            </Link>
+          </div> */}
+>>>>>>> ritesh_2
         </div>
       </div>
     </div>
