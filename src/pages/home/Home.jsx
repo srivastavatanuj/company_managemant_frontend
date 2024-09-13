@@ -12,8 +12,8 @@ import Employee from '../HomeComponents/Employee';
 const HomePage = () => {
   return (
     <div>
-      <div className="
-      sm:text-3xl font-semibold text-center py-4 
+      <div className=" text-lg
+      sm:text-2xl font-semibold text-center py-4 
       ">
         <h1>Introducing Employee Project Management Portal</h1>
       </div>
