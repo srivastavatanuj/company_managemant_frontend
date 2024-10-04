@@ -4,8 +4,8 @@ import homepageimage from "../../assets/homepageimage.png";
 const Hero = () => {
   return (
     <div className="md:bg-[#103556]">
-      <div className=" w-full flex flex-col-reverse md:flex-row md:justify-between items-center  md:p-6 space-y-4 md:space-y-0">
-        <div className="text-[#FFFFFF] bg-[#103556] flex flex-col justify-between md:w-1/2 text-center md:text-left">
+      <div className=" w-full flex flex-col-reverse md:flex-row md:justify-between items-center  md:px-6 md:space-y-4 md:space-y-0">
+        <div className="text-[#FFFFFF] bg-[#103556] flex flex-col justify-between md:w-1/2 text-center md:text-left w-full py-10">
           <div>
             <div className="text-xl sm:text-2xl md:text-3xl font-bold max-w-[400px] mx-auto md:mx-0">
               Workforce Management for The Changing World.
