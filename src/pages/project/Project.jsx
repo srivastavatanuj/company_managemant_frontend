@@ -37,7 +37,7 @@ const Project = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {data.map((project, index) => (
             <div key={index} className="relative">
-              <Link to={`/project/${index}`}>
+              <Link to={`/project/${project.id}`}>
                 <div className="flex flex-col  h-full">
                   <img
                     className="w-full h-48 object-cover  rounded-t-lg"
@@ -51,8 +51,6 @@ const Project = () => {
               </Link>
             </div>
           ))}
-<<<<<<< HEAD
-=======
 
           {/* <div className="relative rounded-lg shadow-lg h-full transform transition hover:scale-105 hover:shadow-2xl mb-40">
             <Link to="/add-project">
@@ -69,7 +67,6 @@ const Project = () => {
               </div>
             </Link>
           </div> */}
->>>>>>> ritesh_2
         </div>
       </div>
     </div>

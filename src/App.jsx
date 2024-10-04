@@ -13,6 +13,7 @@ import ErrorPage from "./pages/ErrorPage/Error.jsx";
 import Header from "./components/header/Header.jsx";
 import Footer from "./components/footer/Footer.jsx";
 import Add from "./pages/AdminAdd/Add.jsx";
+import ChatApp from "./pages/Chat/ChatApp.jsx";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/employee/:id" element={<EmployeeDetail />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/add-project" element={<AddProject />} />
+        <Route path="/chat" element={<ChatApp />} />
         <Route path="*" element={<ErrorPage />} />
         {/* <Route path="/task" element={<Task />} /> */}
       </Routes>
